@@ -10,7 +10,6 @@ public class Executable {
 
 	public static void main(String[] args) {
 
-		System.out.println("Welcome to Surtimerca");
 		Executable exe = new Executable();
 		exe.showMenu();
 
@@ -27,7 +26,8 @@ public class Executable {
 
 		do {
 
-			System.out.println("MAIN MENU");
+			System.out.println("Welcome to Surtimerca");
+			System.out.println("\nMAIN MENU");
 			System.out.println(
 					"Please pick an option\n" +
 							"(1) Load products from file\n" +
@@ -104,5 +104,6 @@ public class Executable {
 		}
 
 	}
+
 
 }
