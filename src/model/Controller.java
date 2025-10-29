@@ -28,12 +28,27 @@ public class Controller {
 
     }
 
-    public void saveProductsToFile(){
+    public String loadProductsFromTextFile(String filePath) {
+
+        String msg = "\nNuevos productos cargados exitosamente desde el archivo proporcionado\n";
+
+        return msg;
 
     }
 
-    public void loadProductsFromFile(){
-        
+    public String saveProducts() {
+
+        String msg = "\nProductos guardados exitosamente en el sistema\n";
+        return msg;
+
+    }
+
+    public String loadProducts() {
+
+        String msg = "\nProductos cargados exitosamente en el sistema\n";
+
+        return msg;
+
     }
 
 }

@@ -30,10 +30,11 @@ public class Executable {
 			System.out.println("MAIN MENU");
 			System.out.println(
 					"Please pick an option\n" +
-							"(1) Register a product\n" +
-							"(2) Show product list \n" +
-							"(3) Save products \n" +
-							"(4) Read products \n" +
+							"(1) Load products from file\n" +
+							"(2) Register a product\n" +
+							"(3) Show product list \n" +
+							"(4) Save products \n" +
+							"(5) Load products \n" +
 							"(0) To close the application");
 			option = keyboardReader.nextInt();
 
@@ -42,20 +43,21 @@ public class Executable {
 					System.out.println("Thanks for using our services!");
 					break;
 				case 1:
-					registerProduct();
+					loadProductsFromFile();
 					break;
 				case 2:
-					System.out.println(controller.showProductList());
+					registerProduct();
 					break;
 				case 3:
-					controller.saveProductsToFile();
-					System.out.println("El listado de productos ha sido guardado");
+					System.out.println(controller.showProductList());
 					break;
 				case 4:
-					controller.loadProductsFromFile();
-					System.out.println("Productos cargados exitosamente");
+					System.out.println(controller.saveProducts());
 					break;
 				case 5:
+					System.out.println(controller.loadProducts());
+					break;
+				case 6:
 					// Add all cases necessary for new requirements
 					break;
 				default:
@@ -64,6 +66,19 @@ public class Executable {
 			}
 
 		} while (option != 0);
+
+	}
+
+	public void loadProductsFromFile() {
+
+		keyboardReader.nextLine();
+
+		System.out.println("CARGA DE PRODUCTOS DESDE UN ARCHIVO DE TEXTO");
+
+		System.out.println("Proporcione la ruta del archivo");
+		String filePath = keyboardReader.nextLine();
+
+		System.out.println(controller.loadProductsFromTextFile(filePath));
 
 	}
 

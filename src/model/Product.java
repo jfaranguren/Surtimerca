@@ -1,5 +1,8 @@
 package model;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Product {
 
     private String id;
@@ -15,7 +18,7 @@ public class Product {
     }
 
     private void generateId() {
-        id = this.hashCode() + "";
+        id = new SimpleDateFormat("MMddHHmmss.SSS").format(new Date());
     }
 
     public String getId() {
@@ -38,9 +41,5 @@ public class Product {
     public String toString() {
         return "Product [id=" + id + ", name=" + name + ", price=" + price + ", unitsAvailable=" + unitsAvailable + "]";
     }
-
-    
-
-
 
 }
